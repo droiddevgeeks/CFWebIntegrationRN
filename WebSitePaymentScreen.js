@@ -1,5 +1,5 @@
 import React from 'react';
-import CFWebView from './native/CFWebView';
+import { CFWebView } from './src/index';
 const WebsitePaymentScreen = ({}) => {
     return (React.createElement(CFWebView, { source: { uri: 'https://discoverpilgrim.com/' } }));
 };

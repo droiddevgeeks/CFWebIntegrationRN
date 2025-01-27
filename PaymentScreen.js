@@ -1,9 +1,9 @@
 import React from 'react';
-import CFWebView from './native/CFAndroidWebView';
+import { CFJSWebView } from './src/index';
 const PaymentScreen = ({}) => {
-    return (React.createElement(CFWebView, { paymentInfo: {
-            paymentSessionId: "session_soPoDKVZ1XV3mC-fYzG1GLYcWvkgUEku2AC_9p5A1Gp_0XKZUkiXLXWTEMOvIg3pF0BwgvXsiY0a72b7GIPwhcyEfo_zSEQ_GZ5RtD3f7OxD",
-            env: 'production'
+    return (React.createElement(CFJSWebView, { paymentInfo: {
+            paymentSessionId: "session_cBXbIzPlZco_XIl4n8MQxS0dNT_smQ6SfvN00vtYB4d7OL9ta5NSKBDaaa0V3F6gvhejqU6TQWVYx0lG29nZXXmtsjCoe-a4I6O2kQh1fBvnPA3lMqQzdW8payment",
+            env: 'sandbox'
         }, style: { flex: 1 } }));
 };
 export default PaymentScreen;

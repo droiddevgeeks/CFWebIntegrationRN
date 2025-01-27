@@ -17,7 +17,7 @@ const WebsiteDefaultUpiPaymentScreen: React.FC = ({ }) => {
   }
     return (
         <WebView
-        source={{ uri: 'https://internal.prodint.cashfree.com/checkout?pt=session_soPoDKVZ1XV3mC-fYzG1GLYcWvkgUEku2AC_9p5A1Gp_0XKZUkiXLXWTEMOvIg3pF0BwgvXsiY0a72b7GIPwhcyEfo_zSEQ_GZ5RtD3f7OxD' }}
+        source={{ uri: 'https://www.cashfree.com/devstudio/preview/pg/web/checkout#renderCheckout' }}
         style={{ flex: 1 }} 
         onShouldStartLoadWithRequest={event => {
           console.log("Current URL Loading", event.url)

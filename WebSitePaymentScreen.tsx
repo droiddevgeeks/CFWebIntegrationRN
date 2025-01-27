@@ -1,5 +1,5 @@
 import React from 'react';
-import CFWebView from './native/CFWebView';
+import { CFWebView } from './src/index';
 
 const WebsitePaymentScreen: React.FC = ({ }) => {
   

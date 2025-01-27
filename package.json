@@ -1,14 +1,46 @@
 {
-  "name": "CFWebIntegrationRN",
+  "name": "react-native-upi-intent",
   "version": "0.0.1",
-  "private": true,
+  "description": "Rendering UPI intent apps in React Native",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/commonjs/src/index.d.ts",
+  "source": "src/index.ts",
+  "react-native": "src/index.ts",
+  "files": [
+    "lib", 
+    "src", 
+    "android", 
+    "ios",
+    "!lib/typescript/example",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "lint": "eslint .",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "bob build",
+    "typescript": "tsc --noEmit"
   },
+  "keywords": [
+    "react-native",
+    "android",
+    "android",
+    "cashfree",
+    "react-native-android",
+    "react-native-ios",
+    "upi",
+    "upi intent",
+    "payment gateway",
+    "psp app"
+  ],
+  "license": "MIT",
   "dependencies": {
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/stack": "^6.4.1",
@@ -36,10 +68,65 @@
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
+    "react-native-builder-bob": "^0.35.2",
     "react-test-renderer": "18.3.1",
     "typescript": "5.0.4"
   },
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "engines": {
     "node": ">=18"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@react-native-community",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "quoteProps": "consistent",
+          "singleQuote": true,
+          "tabWidth": 2,
+          "trailingComma": "es5",
+          "useTabs": false
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      ["commonjs", { "esm": true }],
+      ["module", { "esm": true }],
+      ["typescript", { 
+        "esm": true ,
+        "project": "tsconfig.build.json"
+      }]
+    ]
   }
 }
